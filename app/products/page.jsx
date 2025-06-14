@@ -1,4 +1,5 @@
 'use client'
+import { useRouter } from 'next/navigation';
 import {useState} from 'react'
   import { useRef, useEffect } from 'react';
 
@@ -391,9 +392,9 @@ const products = () => {
   const [closeDropDownRows,setCloseDropDownRows]=useState(false);
   const [startingPageNumber,setStartingPageNumber]=useState(0)
     const [endingPageNumber,setEndingPageNumber]=useState(1)
-
   const dropdownRef = useRef(null);
   const pages=Math.ceil(dummyData?.length/rows);
+  const router=useRouter();
   
   const value=dummyData.slice(startingPageNumber*rows,endingPageNumber*rows);
   console.log("value",value);
@@ -416,7 +417,7 @@ const products = () => {
        <div className="my-5 text-3xl ">
     Products
     </div>
-    <button className="bg-[#06847B] px-4 py-3 h-fit rounded-lg text-neutral-50">CREATE PRODUCTS</button>
+    <button className="bg-[#06847B] px-4 py-3 h-fit rounded-lg text-neutral-50 cursor-pointer" onClick={()=>router.push("/products/add")}>CREATE PRODUCTS</button>
     </div>
     <div className="border border-gray-300 rounded-lg pt-4 ">
     <div className="border-b border-gray-300 "> 
