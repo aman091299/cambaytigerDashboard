@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "./components/Sidebar";
+import StoreProvider from "./store/storeProvider";
+import Logout from "./components/Logout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,14 +20,24 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  console.log("insdie layout")
   return (
     <html lang="en">
     
       <body
         className= "flex"
       >
+      <StoreProvider>
         <Sidebar/>
+        <div className="flex flex-col  relative w-full h-full ">
+           <div className="absolute right-10 top-4 ">
+            <Logout/>
+           </div>
+            
         {children}
+        </div>
+      
+        </StoreProvider>
       </body>
     </html>
   );

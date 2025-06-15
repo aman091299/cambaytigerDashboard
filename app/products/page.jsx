@@ -412,7 +412,7 @@ const products = () => {
 }, []);
 
   return (
-    <div className=" py-4 px-14 text-[#3d3d3d] max-w-[calc(100%-21%)] overflow-y-auto max-h-screen">
+    <div className=" py-4 px-14 text-[#3d3d3d] max-w-[calc(100%)] overflow-y-auto max-h-screen">
     <div className="flex justify-between items-center w-full mb-4">
        <div className="my-5 text-3xl ">
     Products

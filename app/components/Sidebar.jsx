@@ -282,7 +282,7 @@ subHeading:["Products","Reviews (βeta)","Combos","Categories","Collection","Bul
 
   return (
     <div>
-    <div className="mx-2  py-5 flex flex-col items-center overflow-y-auto max-h-screen min-w-[20%] ">
+    <div className="mx-2  py-5 flex flex-col items-center overflow-y-auto max-h-screen min-w-[30%] ">
       <Image
         src="https://cambaytigerstage-media.farziengineer.co/hosted/image-invert-c502e10a8e06.png"
         width="120"

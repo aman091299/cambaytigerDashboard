@@ -1,8 +1,7 @@
 import { useState } from "react";
 
-const DynamicField = () => {
+const DynamicField = ({fields,setFields}) => {
   const [showMetaData, setShowMetaData] = useState(false);
-  const [fields, setFields] = useState([]);
   console.log("fields1", fields);
 
   const handleFieldChange = (index, newValue, keyOrValue) => {
@@ -14,14 +13,14 @@ const DynamicField = () => {
     setFields([...fields, { key: "", value: "" }]);
   };
   const deleteField = (index) => {
-    fields.splice(index, 1);
-    setFields([...fields]);
+  const updatedFields = fields.filter((_, i) => i !== index); 
+    setFields(updatedFields);
   };
 
 
   return (
     <div className="py-6">
-      <div className="w-[calc(100%-35%)] bg-white border border-gray-300  rounded-lg">
+      <div className="w-[calc(100%-25%)] bg-white border border-gray-300  rounded-lg shadow-2xl">
         <div className="py-4 text-xl border-b border-gray-300 w-full px-4 ">
           Metadata
         </div>
@@ -35,11 +34,11 @@ const DynamicField = () => {
         )}
         {fields.length !== 0 && (
           <div>
-            <div className="px-4 py-4 flex flex-col gap-3">
-              <div>1 Field </div>
+            <div className="px-4 py-4 flex flex-col gap-1">
+              <div>{fields.length} Field </div>
 
               {fields?.map((field, index) => (
-                <div className="grid grid-cols-12 gap-20" key={index}>
+                <div className="grid grid-cols-12 gap-12" key={index}>
                   <div className="col-span-4">
                     <div>Field</div>
                     <input
@@ -70,7 +69,7 @@ const DynamicField = () => {
                     <div>Actions</div>
                     <div className="flex gap-2 ">
                       <svg
-                      onClick={()=>{editFields}}
+                      
                         className="w-6 h-6"
                         focusable="false"
                         viewBox="0 0 24 24"
