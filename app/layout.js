@@ -20,7 +20,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  console.log("insdie layout")
+  console.log("insdie layout",children)
   return (
     <html lang="en">
     
