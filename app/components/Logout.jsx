@@ -22,7 +22,7 @@ const Logout = () => {
        router.push("/");
       
     } catch (error) {
-      console.log("error",error)
+      
       return console.log("Error" + error.message);
     }
   };
