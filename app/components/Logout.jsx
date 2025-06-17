@@ -16,6 +16,10 @@ const Logout = () => {
        router.push("/");
       
     } catch (error) {
+<<<<<<< HEAD
+=======
+      
+>>>>>>> 2f5a3cf (adding yfyfy f fhj)
       return console.log("Error" + error.message);
     }
   };
